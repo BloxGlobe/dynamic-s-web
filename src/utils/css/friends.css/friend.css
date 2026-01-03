@@ -1,4 +1,3 @@
-
 .friends-container {
   display: flex;
   gap: 12px;
@@ -10,6 +9,7 @@
 .friends-container::-webkit-scrollbar {
   height: 6px;
 }
+
 .friends-container::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.2);
   border-radius: 999px;
@@ -72,20 +72,25 @@
 }
 
 .friend-item.add-friend .friend-avatar {
-  background: #2f2f2f;
-  border: 1px dashed rgba(255,255,255,0.25);
+  background: #2a2a2a;
+  border: none;
+}
+
+.friend-item.add-friend .friend-avatar::after {
+  display: none;
 }
 
 .friend-item.add-friend svg {
-  width: 22px;
-  height: 22px;
-  color: rgba(255,255,255,0.7);
+  width: 20px;
+  height: 20px;
+  color: rgba(255,255,255,0.85);
   pointer-events: none;
 }
 
 .friend-item.add-friend:hover .friend-avatar {
   background: #3a3a3a;
-  border-color: rgba(255,255,255,0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
 }
 
 .friend-item.add-friend:hover svg {
