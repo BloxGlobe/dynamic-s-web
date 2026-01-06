@@ -1,1 +1,0 @@
-# session_manager package
