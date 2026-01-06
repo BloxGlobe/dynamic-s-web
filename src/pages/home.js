@@ -10,23 +10,9 @@ function loadHomeCSS() {
   document.head.appendChild(link);
 }
 
-function loadRegisterLoginCSS() {
-  if (document.getElementById("register-login-css")) return;
-  const link = document.createElement("link");
-  link.id = "register-login-css";
-  link.rel = "stylesheet";
-  link.href = "src/utils/css/register-login.css";
-  document.head.appendChild(link);
-}
-
 function initHome(container) {
   loadHomeCSS();
-
   container.innerHTML = `
-    <section class="section">
-      <div id="authContainer"></div>
-    </section>
-
     <h1 class="page-title">Home</h1>
 
     <!-- Friends Section -->
@@ -74,11 +60,6 @@ function initHome(container) {
   `;
 
   setTimeout(() => {
-    loadRegisterLoginCSS();
-    import("../components/common/RegisterLogin.js").then(mod => {
-      try { mod.mountRegisterLogin(document.getElementById('authContainer')); } catch(e) {}
-    }).catch(()=>{});
-
     loadFriends();
     loadRecommended();
     loadResources();

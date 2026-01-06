@@ -1,5 +1,3 @@
-# auth-module/session-manager/session.py
-
 from flask import session, jsonify
 
 def load_session():
